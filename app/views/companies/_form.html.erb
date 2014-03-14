@@ -1,0 +1,84 @@
+<%= form_for(@company) do |f| %>
+  <% if @company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% @company.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <tr class="field">
+      <td>
+        <%= f.label :会社名 %>
+      </td>
+      <td>
+        <%= f.text_field :company %>
+      </td>
+    </tr>
+
+    <tr class="field">
+      <td>
+        <%= f.label :カナ %>
+      </td>
+      <td>
+        <%= f.text_field :kana %>
+      </td>
+    </tr>
+
+    <tr  class="field">
+      <td>
+        <%= f.label :住所 %>
+      </td>
+      <td>
+        〒<%= f.text_field :first_address_number %>-<%= f.text_field :second_address_number %><br>
+        <%= f.text_field :prefecture %>(都道府県)<br>
+        <%= f.text_field :city %>(市区郡)<br>
+        <%= f.text_field :town %>(町村番地)
+      </td>
+    </tr>
+
+    <tr class="field">
+      <td>
+        <%= f.label :電話番号 %>
+      </td>
+      <td>
+        <%= f.text_field :phone_number1 %>-<%= f.text_field :phone_number2 %>-<%= f.text_field :phone_number3 %>
+      </td>
+    </tr>
+
+    <tr class="field">
+      <td>
+        <%= f.label :ファックス番号 %>
+      </td>
+      <td>
+        <%= f.text_field :fax_number1 %>-<%= f.text_field :fax_number2 %>-<%= f.text_field :fax_number3 %>
+      </td>
+    </tr>
+    <tr class="field">
+      <td>
+        <%= f.label :メールアドレス %>
+      </td>
+      <td>
+        <%= f.text_field :mail_address %>
+      </td>
+    </tr>
+
+    <tr class="field">
+      <td>
+        <%= f.label :ホームページ %>
+      </td>
+      <td>
+        <%= f.text_field :hp_url %>
+      </td>
+    </tr>
+  </table>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

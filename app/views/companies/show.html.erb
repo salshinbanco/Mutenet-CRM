@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @company.company %>
+</p>
+
+<p>
+  <strong>Kana:</strong>
+  <%= @company.kana %>
+</p>
+
+<p>
+  <strong>First address number:</strong>
+  <%= @company.first_address_number %>
+</p>
+
+<p>
+  <strong>Second address number:</strong>
+  <%= @company.second_address_number %>
+</p>
+
+<p>
+  <strong>Prefecture:</strong>
+  <%= @company.prefecture %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @company.city %>
+</p>
+
+<p>
+  <strong>Town:</strong>
+  <%= @company.town %>
+</p>
+
+<p>
+  <strong>Phone number1:</strong>
+  <%= @company.phone_number1 %>
+</p>
+
+<p>
+  <strong>Phone number2:</strong>
+  <%= @company.phone_number2 %>
+</p>
+
+<p>
+  <strong>Phone number3:</strong>
+  <%= @company.phone_number3 %>
+</p>
+
+<p>
+  <strong>Fax number1:</strong>
+  <%= @company.fax_number1 %>
+</p>
+
+<p>
+  <strong>Fax number2:</strong>
+  <%= @company.fax_number2 %>
+</p>
+
+<p>
+  <strong>Fax number3:</strong>
+  <%= @company.fax_number3 %>
+</p>
+
+<p>
+  <strong>Mail address:</strong>
+  <%= @company.mail_address %>
+</p>
+
+<p>
+  <strong>Hp url:</strong>
+  <%= @company.hp_url %>
+</p>
+
+<%= link_to '編集', edit_company_path(@company) %> |
+<%= link_to 'トップへ戻る', companies_path %>

@@ -1,3 +1,6 @@
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag 'ajaxzip2/ajaxzip2' %>
+
 <%= form_for(@company) do |f| %>
   <% if @company.errors.any? %>
     <div id="error_explanation">
@@ -35,8 +38,8 @@
         <%= f.label :住所 %>
       </td>
       <td>
-        〒<%= f.text_field :first_address_number %>-<%= f.text_field :second_address_number %><br>
-        <%= f.text_field :prefecture %>(都道府県)<br>
+        〒<%= f.text_field :first_address_number %>-<%= f.text_field :second_address_number { :onblur => "AjaxZip2.zip2addr('user[zip_code_first]','user[prefecture]','user[city]', 'user[zip_code_latter]');" }%><br>
+        <%= f.text_field :prefecturem, pref_options %>(都道府県)<br>
         <%= f.text_field :city %>(市区郡)<br>
         <%= f.text_field :town %>(町村番地)
       </td>

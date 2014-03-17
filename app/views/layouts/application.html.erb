@@ -8,6 +8,22 @@
 </head>
 <body>
 
+<% if notice %>
+  <p class="alert alert-notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-error"><%= alert %></p>
+<% end %>
+
+<div id='user_nav'>
+  <% if user_signed_in? %>
+    現在、<%= current_user.email %>でログインしています. <%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> or
+    <%= link_to "Sign in", new_user_session_path %>
+  <% end %>
+</div>
+
 <%= yield %>
 
 </body>

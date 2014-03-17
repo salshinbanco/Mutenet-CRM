@@ -38,7 +38,9 @@
         <%= f.label :住所 %>
       </td>
       <td>
-        〒<input type="text" name="company[first_address_number]" size="4" maxlength="3"> － <input type="text" name="company[second_address_number]" size="5" maxlength="4" onKeyUp="AjaxZip3.zip2addr('company[first_address_number]','company[second_address_number]','company[prefecture]','company[city]','company[town]');"><br>
+        〒<%= f.text_field :first_address_number, :maxlength => "3", :size => "4" %>
+         － <%= f.text_field :second_address_number, :maxlength => "4", :size => "5", onKeyUp: "AjaxZip3.zip2addr('company[first_address_number]','company[second_address_number]','company[prefecture]','company[city]','company[town]');"%><br>
+
         <%= f.text_field :prefecture %>(都道府県)<br>
         <%= f.text_field :city %>(市区郡)<br>
         <%= f.text_field :town %>(町村番地)

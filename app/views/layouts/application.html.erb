@@ -19,8 +19,9 @@
   <% if user_signed_in? %>
     現在、<%= current_user.email %>でログインしています. <%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
   <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or
-    <%= link_to "Sign in", new_user_session_path %>
+    <%= link_to "新しいユーザーを作成", new_user_registration_path %> する
+    <br>
+    <%= link_to "ログイン画面へ", new_user_session_path %>
   <% end %>
 </div>
 

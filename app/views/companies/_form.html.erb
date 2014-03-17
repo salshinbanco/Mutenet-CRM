@@ -1,4 +1,4 @@
-<script src="http://ajaxzip3.googlecode.com/svn/trunk/ajaxzip3/ajaxzip3.js" charset="UTF-8"></script>
+<%= javascript_include_tag "http://ajaxzip3.googlecode.com/svn/trunk/ajaxzip3/ajaxzip3.js", :charset => "UTF-8" %>
 <script>AjaxZip2.JSONDATA = '/ajaxzip2/data';</script>
 
 <%= form_for(@company) do |f| %>
@@ -38,10 +38,10 @@
         <%= f.label :住所 %>
       </td>
       <td>
-        〒<input type="text" name="zip21" size="4" maxlength="3"> － <input type="text" name="zip22" size="5" maxlength="4" onKeyUp="AjaxZip3.zip2addr('zip21','zip22','pref21','addr21','strt21');"><br>
-        <input type="text" name="pref21" size="40">(都道府県)<br>
-        <input type="text" name="addr21" size="40">(市区郡町村)<br>
-        <input type="text" name="strt21" size="40">(番地)
+        〒<input type="text" name="company[first_address_number]" size="4" maxlength="3"> － <input type="text" name="company[second_address_number]" size="5" maxlength="4" onKeyUp="AjaxZip3.zip2addr('company[first_address_number]','company[second_address_number]','company[prefecture]','company[city]','company[town]');"><br>
+        <%= f.text_field :prefecture %>(都道府県)<br>
+        <%= f.text_field :city %>(市区郡)<br>
+        <%= f.text_field :town %>(町村番地)
 
       </td>
     </tr>

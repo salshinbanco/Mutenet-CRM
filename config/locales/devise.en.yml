@@ -8,12 +8,12 @@ en:
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
     failure:
       already_authenticated: "既にログインしています"
-      inactive: "Your account is not activated yet."
+      inactive: "あなたのアカウントは有効ではありません"
       invalid: "メールアドレスもしくはパスワードに誤りがあります"
       locked: "Your account is locked."
       last_attempt: "You have one more attempt before your account will be locked."
       not_found_in_database: "メールアドレスもしくはパスワードに誤りがあります"
-      timeout: "Your session expired. Please sign in again to continue."
+      timeout: "セッションが切れました。もう一度ログインしてください"
       unauthenticated: "作業を続けるには、新しいユーザーを作成するか、ログインする必要があります"
       unconfirmed: "You have to confirm your account before continuing."
     mailer:
